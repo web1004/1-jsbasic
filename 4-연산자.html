@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>4-연산자</title>
+</head>
+<body>
+
+  
+
+  <script>
+    //산술연산자(+,-,*,/,%)
+    let num1 = 15;
+    let num2 = 6;
+    let result;
+
+    result = num1 + num2;
+    console.log(result);
+
+    result = num1 - num2;
+    console.log(result);
+
+    result = num1 * num2;
+    console.log(result);
+
+    result = num1 / num2;
+    console.log(result);
+
+    result = num1 % num2;
+    console.log(result);
+
+    console.log(`---------------------------`);
+
+    //문자결합연산자
+    let t1 = "학교종이";
+    let t2 = "땡땡땡";
+    let t3 = 8282;
+    let t4 = "어서모이자";
+    let result2;
+
+    result2 = t1 + t2 + t3 + t4;  //문자+문자+숫자+문자=문자
+    console.log(result2);
+
+    console.log(`---------------------------`);
+
+    //대입연산자(복합대입연산자)
+    let num3 = 10;
+    let num4 = 3;
+
+    num3 += num4; //num3=num3+num4; ->13
+    console.log(num3);
+
+    num3 -= num4; //num3=num3-num4; ->10
+    console.log(num3);
+
+    num3 *= num4; //num3=num3*num4; ->30
+    console.log(num3);
+
+    num3 %= num4; //num3=num3%num4; ->0
+    console.log(num3);
+
+    console.log(`---------------------------`);
+
+    //증감연산자(++/--)
+    let num5 = 10;
+    let num6 = 20;
+    let result3;
+
+    num5--; //변수num5에서 1이 감소 ->num5는 9
+    console.log(num5);
+
+    num5++; //변수num5에서 1이 증가 ->num5는 10
+    console.log(num5);
+
+    result3 = num6++; //20을 먼저 result3에 저장을 먼저 하고, 다음 문장으로 내려가면서 증가-> result3은 20
+    console.log(result3);
+
+    result3 = ++num6; //위에서 증가한 21이 내려오고 21을 1증 증가부터 하고 변수값에 저장 -> result3은 22
+    console.log(result3);
+
+    console.log(`---------------------------`);
+
+    //비교연산자
+    let a = 10;
+    let b = 20;
+    let c = 10;
+    let f = "20"; //변수 f의 값->""를 했기 때문에 숫자가 아닌 문자형 "20"
+    let result4;
+
+    result4 = a > b;
+    console.log(result4);
+
+    result4 = a < b;
+    console.log(result4);
+
+    result4 = a <= b;
+    console.log(result4);
+
+    result4 = b == f; //데이터형 상관없이 데이터가 같으므로 참->20=20
+    console.log(result4);
+
+    result4 = b === f; //데이터형이 일치하지 않으므로 거짓->숫자20=문자20
+    console.log(result4);
+
+    result4 = b != f; //데이터타입과 상관없이 숫자가 같으면 같다(false)
+    console.log(result4);
+
+    result4 = b !== f; //데이터타입을 비교하므로 같지 않다(true)
+    console.log(result4);
+
+
+    console.log(`---------------------------`);
+
+    //논리연산자(and연산자-&&,or연산자-||)
+    let aa = 10;
+    let bb =20;
+    let m = 30;
+    let n = 40;
+    let result5;
+
+    result5 = aa > bb || bb >= m || m > n; 
+    console.log(result5); 
+
+    result5 = aa > bb || bb >= m || m <= n; 
+    console.log(result5); 
+
+    result5 = aa <= bb && bb <= m && m <= n; 
+    console.log(result5); 
+
+    result5 = !(aa > bb);  //not
+    console.log(result5);
+
+    console.log(`---------------------------`);
+
+    //삼항조건연산자
+    //조건식 ? 조건식이 맞았을때 실행문 : 조건이 맞지 않았을때 실행문;
+
+    let g = 10;
+    let h = 3;
+    let result6;
+
+    result6 = g > h ? "javascript" : "hello";
+    console.log(result6); 
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>9-반복문-for문</title>
+</head>
+<body>
+
+  <!--  
+    반복문은 for문과 while문, do while문이 있다.
+    for문은 정확히 몇번 회전해야 하는지 범위를 알때 사용하고,
+    while은 주로 정확한 범위가 아닌 상태에 따른 반복일때 사용된다.
+
+    //while문 형식
+    let 변수=초기값;     
+    while(조건식){
+      실행문;
+      증감식;
+    }
+    
+    //for문 형식
+    for(초기값;조건식;증감식){
+      실행문;
+    } 
+  -->
+
+
+
+  <script>
+    let i=1;     
+    while(i<=10){
+      console.log("안녕하세요"+i);
+      i++;
+    }
+
+    for(let j=1;j<=10;j++){
+      console.log("안녕하세요"+j);
+    } 
+
+    //변수 h가 1부터 100이 될 때까지 반복 실행
+    for(let h=1;h<=100;h++){
+      if(h%5==0 && h%7!=0){ //5의 배수이고 7의 배수가 아닌 경우
+        document.write(`<h3 style="color:red;">${h}</h3>`);
+      }else if(h%7==0 && h%5!=0){ //7의 배수이고 5의 배수가 아닌 경우
+        document.write(`<h3 style="color:blue;">${h}</h3>`);
+      }else if(h%7==0 && h%5==0){ //7의 배수이고 5의 배수인 경우
+        document.write(`<h3 style="color:aqua;">${h}</h3>`);
+      }
+    } 
+  </script>
+</body>
+</html>
