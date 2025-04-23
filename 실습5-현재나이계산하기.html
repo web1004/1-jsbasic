@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습5-현재나이계산하기</title>
+  <style>
+    body {text-align: center;}
+    .btn {
+      margin-top: 50px;
+      font-weight: 400;
+      color: #fff;
+      background-color: #007bff;
+      text-align: center;
+      vertical-align: center;
+      border: 1px solid blue;
+      padding: 5px;       
+    }
+    .btn:hover {
+      color: #fff;
+      background-color: navy;
+      border-color: navy;
+    }
+    .show {
+      margin-top: 50px;
+      padding: 20px 30px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <button class="btn" onclick="calc()">나이계산</button> -->
+  <button class="btn">나이계산</button>
+  <div id="result" class="show">(결과값 표시)</div>
+
+  <script>
+    //(1)함수를 만들고 인라인방식으로 함수호출
+    /* function calc() {
+      let objDate = new Date();
+      let currentYear = objDate.getFullYear(); 
+      let birthYear = prompt("태어난 년도를 입력하세요.","YYYY");
+      let currenAge = document.querySelector('#result');
+      let age = 0;
+
+      age = currentYear - birthYear +1;
+      currenAge.textContent = `당신의 나이는 ${age} 세입니다.`;
+    }; */
+
+    //(2)addEventListener를 이용한 방법
+    let btn = document.querySelector('button');
+    let currentAge = document.querySelector('#result');
+
+    // console.log(btn);
+    // console.log(currentAge);
+
+    let objDate = new Date();
+    let currentYear = objDate.getFullYear();
+
+    btn.addEventListener('click', () => {
+      let birthYear = prompt("태어난 년도를 입력하세요.","YYYY");
+      age = currentYear - birthYear +1;
+
+      currentAge.innerHTML = `당신의 나이는 ${age} 세입니다.`;
+    });
+  </script>
+</body>
+</html>

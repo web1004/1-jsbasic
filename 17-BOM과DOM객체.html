@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>17-BOM과DOM객체</title>
+  <script src="js/script17.js" defer></script>
+  <style>
+    .dark {
+      color: #fff;
+      background-color: #000;
+    }
+    .light{
+      color: #000;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2 id="title">스포츠</h2>
+    <form name="myForm">
+      <input type="text" name="myText">
+      <button>추가</button>
+    </form>
+    <ul class="list">
+      <li class="item">농구</li>
+      <li class="item">테니스</li>
+      <li class="item">배드민턴</li>
+    </ul>
+    <p class="hello1">안녕하세요1.</p>
+    <p class="hello2">안녕하세요2.</p>
+    <p class="hello3">안녕하세요3.</p>
+  </section>
+
+</body>
+</html>
+
+<!--  
+★★★ BOM(Brwoser Object Model)브라우저객체모델이란? 
+웹브라우저를 객체화하는것, 브라우저를 스크립트로 제어함
+
+*window :모든 객체가 소속된 객체이며, 브라우저 창 자체를 의미한다.
+->window.open('http://google.com');
+->window.close();
+->window.alert('경고!!!');
+
+*history : 현재의 브라우저가 접근했던 URL history를 제어할수 있다.
+->history.back()
+->history.forward()
+
+*location : 문서의 주소와 관련된 객체로 window객체의 프로퍼티인 동시에 document의 프로퍼티이다.이 객체를 이용하여 윈도우의 문서URL 을 변경할수 있고, 문서의 위치와 관련해서 다양한 정보를 얻을수 있다.
+->location.host
+->location.href='http://google.com' (네이버에서)
+
+*screen : 사용자의 디스플레이 화면에 대한 다양한 정보를 갖고 있는 객체이다.
+*navigator : 실행중인 애플리케이션(브라우저)에 대한 정보를 알 수 있다.
+
+
+★★★ DOM(Documnet Object Model)문서객체모델이란?
+문서객체모델은 XML이나 HTML문서에 접근하기 위한 일종의 인터페이스이다. 
+이 객체 모델은 문서 내의 모든 요소를 정의하고, 각각의 요소에 접근하는 방법을 제공한다.
+
+HTML 요소 선택하기
+HTML 요소 속성 조작
+HTML 요소 스타일 수정
+
+(1)get 메서드
+document.getElementById('id이름');
+document.getElementsByClassName('class이름');
+document.getElementsByTagName('태그이름');
+
+(2)DOM 요소쿼리
+document.querySelector('선택자');
+document.querySelectorAll('선택자');
+
+(3)HTML 요소 조작하기
+textContent - HTML 태그를 모두 제거하고 텍스트 데이터만 제공
+innerHTML - HTML 태그를 그대로 제공
+
+setAttribute(속성명, 속성값) - 요소에 주어진 이름의 속성값을 입력
+removeAttribute(속성명) - 요소에서 주어진 이름의 속성을 제거
+
+createElement - 지정한 tagName 의 HTML요소를 생성
+appendChild - 항상 마지막의 자식요소로 추가, 삽입할 요소만 매개변수로 제공
+insertBefore - 매개변수를 2개 받음, 첫번째는 삽입할 요소이고 두번째는 삽입할 위치를 정하는 요소
+remove - 해당 요소를 제거
+parentNode - 지정된 노드의 부모를 반환
+classList.add - 클래스 생성
+classList.remove - 클래스삭제
+classList.toggle - 클래스생성 or 삭제
+
+children - 자식 요소들 반환
+firstElementChild , lastElementChild - 첫 번째 / 마지막 자식 요소 반환
+parentElement - 부모 요소 반환
+-->

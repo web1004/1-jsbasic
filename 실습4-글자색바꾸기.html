@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습4-글자색바꾸기</title>
+</head>
+<body>
+
+  <h1 id="heading">안녕 자바스크립트</h1>
+  <p id="text">위의 텍스트를 클릭해 보세요.</p>
+
+  <script>
+    let heading = document.querySelector('#heading');
+    //console.log(heading);
+
+    heading.addEventListener('click', () => {
+      heading.style.color = 'red';
+    });
+  </script>
+</body>
+</html>

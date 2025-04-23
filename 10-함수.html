@@ -73,8 +73,83 @@
     let result = plus(10,15);
     console.log(`두 숫자를 더한 결과는 ${result} 입니다.`);
 
+    console.log('------------------------------------');
 
+    /* 스코프란 범위, 변수 혹은 함수가 갖게 되는 유효범위를 말한다.
+    함수 내에서는 코드블럭이 있고 블럭안에서 선언한 변수는 코드블럭안에서만 사용할수 있음 
+    전역스코프, 지역스코프, 함수 스코프, 블록스코프 등이 있다.
+    */
 
+    //전역변수(전역스코프)
+    let sum = 0;
+    function add(number1, number2) {
+      sum = number1 + number2;
+    }
+    add(10,15);
+    console.log(sum);
+
+    //지역변수(지역스코프)
+    /* function add(number11, number22) {
+      let summ = number11 + number22;
+    }
+    add(10,15);
+    console.log(summ); ->Error(지역변수로 함수내부에서만 접근가능함)  */
+
+    const number3 = 10;  //전역스코프
+    function print() {
+      const number3 = 100; //지역스코프
+      console.log(`지역스코프 : ${number3}`);
+    };
+    print();
+    console.log(`전역스코프 : ${number3}`);
+
+    console.log('------------------------------------');
+
+    //즉시실행함수(익명함수로 재활용할 필요가 없는 경우)
+    (function(){
+      console.log('hello');
+    })();
+
+    console.log('------------------------------------');
+
+    /* 화살표함수(ES6) 중요!
+    -function 예약어를 생략할수 있다.
+    -함수에 매개변수가 단 하나뿐이라면 괄호도 생략할수 있다.
+    -함수 바디가 표현식이 하나라면 중괄호와 return문도 생략할수 있다. */
+
+    // const hello3 = function(){
+    //   console.log('hello Javascript!');
+    // };
+    // hello3();
+
+    // const hello3 = () => {
+    //   console.log('hello Javascript!');
+    // };
+    // hello3();
+
+    // const hello3 = (name3) => {
+    //   console.log(`hello ${name3}`);
+    // };
+    // hello3('웹디1004');
+
+    //매개변수가 한개일때는 괄호생략가능
+    // const hello3 = name3 => {
+    //   console.log(`hello ${name3}`);
+    // };
+    // hello3('웹디1004');
+
+    //명령문이 한줄일때는 코드블럭{}도 생략가능
+    // const hello3 = name3 => console.log(`hello ${name3}`);
+    // hello3('웹디1004');
+
+    // const hello3 = name3 => {
+    //   return `hello ${name3}`;
+    // };
+
+    //명령문이 한줄이고 return 할때는 return 도 생략가능
+    const hello3 = name3 => `hello ${name3}`;
+    const str = hello3('Javascript!');
+    console.log(str);
   </script>
 </body>
 </html>

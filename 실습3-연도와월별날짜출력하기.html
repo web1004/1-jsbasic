@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습3-연도와월별날짜출력하기</title>
+</head>
+<body>
+
+  <!-- 
+    (1)현재연도와 월을 입력받는다.
+    (2)switc문을 이용해서 현재 월이 몇일까지인지....
+    (3)for문을 이용해서 현재 월의 1일부터 마지막일까지 출력
+    (4)if문을 이용해서 윤달을 계산(2월)
+    -윤달계산법 : 현재 년도가 4년주기이고 100년 주기는 아닌경우
+    또는 400년 주기로 윤년이므로 2월은 29일까지 출력
+  -->
+
+  <script>
+    //(1)현재의 년도와 월을 입력받기
+    let year = prompt('현재 몇 년입니까?','0000');
+    let mon = prompt('현재 몇 월입니까?','0');
+    let last_day;  //undefined(값을 할당하지 않음)
+
+    //(2)현재 월이 몇일까지 있는지 선택문을 이용
+    /* switch(mon){
+      case '1': last_day=31;
+      break;
+      case '2': last_day=28;
+      //(4)윤달계산
+      if(year%4==0 && year%100!=0 || year%400==0){
+        last_day=29;
+      };
+      break;
+      case '3': last_day=31;
+      break;
+      case '4': last_day=30;
+      break;
+      case '5': last_day=31;
+      break;
+      case '6': last_day=30;
+      break;
+      case '7': last_day=31;
+      break;
+      case '8': last_day=31;
+      break;
+      case '9': last_day=30;
+      break;
+      case '10': last_day=31;
+      break;
+      case '11': last_day=30;
+      break;
+      case '12': last_day=31;
+      break;
+    } */
+
+    switch(mon){
+      case '1': case '3': case '5': case '7': case '8': case '10': case '12':
+      last_day=31;
+      break;
+
+      case '4': case '6': case '9': case '11':
+      last_day=30;
+      break;
+
+      case '2': last_day=28;
+      if(year%4==0 && year%100!=0 || year%400==0){
+        last_day=29;
+      };
+      break;
+    };
+
+    //document.write('<h1>'+year+'년'+mon+'월</h1><br>');
+    document.write(`<h1>${year}년 ${mon}월</h1><br>`);
+
+    //(3)현재 1일부터 마지막일까지 문서에 출력
+    for(let i=1;i<=last_day;i++){
+      //document.write(i+' ');
+      document.write(`${i} `);
+    }
+  </script>
+</body>
+</html>

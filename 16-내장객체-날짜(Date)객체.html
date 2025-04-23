@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>16-내장객체-날짜(Date)객체</title>
+  <style>
+    #output {
+      width: 400px;
+      height: 100px;
+      text-align: center;
+      padding-top: 50px;
+      border: 5px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="output">
+    <div id="date"></div>
+  </div>
+
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    // let d = new Date();
+
+    // console.log(d);
+    // console.log(d.getMonth());
+    // console.log(d.getFullYear());
+    // console.log(d.getHours());
+    // console.log(d.getDay());
+    // console.log(d.getMinutes());
+
+    /*현재 날짜표시하기________________________*/
+    let objDate = new Date();
+
+    let year = objDate.getFullYear(); // 년 구하기
+    let month = objDate.getMonth(); //월구하기->0(1월)부터 11(12월)까지의 정수값
+    let date = objDate.getDate(); //일구하기->날짜(일)를 나타내는 1에서 31까지의 정수
+    let day = objDate.getDay(); //0(일)부터 6(토)까지의 정수값
+    let aryDay = ['일', '월', '화', '수', '목', '금', '토'];
+
+    //년,월,일,요일 출력
+    let fullDate = `${year}년 ${month+1}월 ${date}일 ${aryDay[day]}요일`;
+    $('#date').text(fullDate);
+  </script>
+</body>
+</html>

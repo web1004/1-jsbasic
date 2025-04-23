@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>22-데이터속성</title>
+  <script src="js/script22.js" defer></script>
+</head>
+<body>
+
+  <h2 data-test="hello test">Hello Javascript</h2>
+  <hr>
+  <h2>과일</h2>
+  <ul>
+    <li data-img="image/apple.jpg">사과</li>
+    <li data-img="image/tomato.jpg">토마토</li>
+    <li data-img="image/blueberry.jpg">블루베리</li>
+  </ul>
+  <h2 class="selected-item">과일을 선택해주세요.</h2>
+  <img src="" alt="">
+
+</body>
+</html>
+
+<!-- 
+*데이터속성 : HTML 요소의 dataset 프로퍼티 데이터(data-)속성을 읽거나 수정할수 있다.
+
+<button data-tooltip='이 버튼은 회원가입 버튼입니다.'>가입하기</button>
+
+const btn = document.querySelector('[data-tooltip]');
+
+//읽기
+console.log(btn.dataset.tooltp);
+
+//수정
+btn.dataset.tooltip = '이 버튼은 탈퇴하기 버튼입니다.';
+-->

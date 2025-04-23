@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>12-객체</title>
+</head>
+<body>
+
+  <!--  
+    객체(Object) 생성하기-객체는 연관된 데이터를 담는 그릇이다. 
+    키와 값으로 구성되고, 객체의 값으로는 문자열, 숫자, 또는 배열, 함수로도 올수 있다. 이러한 값들을 프로퍼티라고 하며, 프로퍼티의 값이 함수일때는 메서드라고 한다.
+  -->
+
+
+
+  <script>
+    /* (1)객체 생성하는 방법 */
+    //생성자문법
+    // const person = new Object();
+    // person.name = '웹디1004';
+    // person.age = 27; 
+    // console.log(person);
+
+    //리터럴문법
+    const personn = {
+      nname : '웹디1004',
+      aage : 27
+    }
+    console.log(personn);
+
+    console.log('--------------------------------------');
+
+    /* (2)객체프로퍼티 접근하는 방법  */
+    const person = {
+      name: ['Bob', 'Smith'],
+      age: 32,
+      gender: 'male',
+      nterests: ['music', 'health'],
+      hello: function() {
+        alert('Hello!');
+      },
+      greeting: function() {
+        alert('Hi!');
+      },
+      hobby: {
+        name: 'programing',
+        alert: function() {
+          alert('programing');
+        }
+      },
+    };
+
+    //점표기법
+    console.log(person.name[0]);
+    console.log(person.name[1]);
+    //person.hello();
+    console.log(person.hobby.name);
+    //console.log(person.hobby.alert());
+
+    console.log('--------------------------------------');
+
+    /* (3)함수 파라미터로 객체 전달하기 */
+    // function printPerson(namee, agee, hobbyy){
+    //   console.log(`제 이름은 ${namee}이며, 나이는 ${agee}살입니다. 그리고 취미는 ${hobbyy}입니다.`);
+    // };
+    // printPerson('웹디1004', 10, '댄스'); 
+
+    //만약 파라미터가 많아질 경우 객체를 사용할수 있다.
+    function printPerson(person2){
+      console.log(`제 이름은 ${person2.namee}이며, 나이는 ${person2.agee}살입니다. 그리고 취미는 ${person2.hobbyy}입니다.`);
+    };
+
+    const person2 = {
+      namee: '웹디1004',
+      agee: 10,
+      hobbyy: '댄스',
+    };
+    printPerson(person2);
+
+    console.log('--------------------------------------');
+
+    /* (4)객체축약-키와 값이 같은 경우는 한번만 써도 된다. */
+    const na = '홍길동';
+    const country = 'KR';
+
+    // const user = {
+    //   na: na,
+    //   country: country
+    // };
+    const user = {
+      na,
+      country,
+    };
+    console.log(user);
+
+  </script>
+</body>
+</html>
