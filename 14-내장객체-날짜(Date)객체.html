@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>16-내장객체-날짜(Date)객체</title>
+  <title>14-내장객체-날짜(Date)객체</title>
   <style>
     #output {
       width: 400px;
@@ -14,13 +14,12 @@
   </style>
 </head>
 <body>
-
+  
   <div id="output">
     <div id="date"></div>
   </div>
 
-
-  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     // let d = new Date();
 
@@ -28,8 +27,8 @@
     // console.log(d.getMonth());
     // console.log(d.getFullYear());
     // console.log(d.getHours());
-    // console.log(d.getDay());
     // console.log(d.getMinutes());
+    // console.log(d.getDay());
 
     /*현재 날짜표시하기________________________*/
     let objDate = new Date();
@@ -42,7 +41,7 @@
 
     //년,월,일,요일 출력
     let fullDate = `${year}년 ${month+1}월 ${date}일 ${aryDay[day]}요일`;
-    $('#date').text(fullDate);
+    $("#date").text(fullDate);
   </script>
 </body>
 </html>

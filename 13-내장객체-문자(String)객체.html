@@ -2,12 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>15-내장객체-문자(String)객체</title>
+  <title>13-내장객체-문자(String)객체</title>
 </head>
 <body>
-
-  <img src="image/string.jpg" alt="">
-
+  
+  
   <script>
     //index 0~31(공백포함 총 32개문자)
     let t="Hello Thank you good luck to you";
@@ -17,6 +16,9 @@
 
     console.log(t.indexOf("you"));
     //문자열 왼쪽에서부터 최초로 발견된 "you"의 인덱스값을 반환함->12
+
+    console.log(t.indexOf("you",16));
+    //문자열 인덱스16위치부터 최초로 발견된 "you"의 인덱스값을 반환함->29
 
     console.log(t.lastIndexOf("you"));
     //문자열 오른쪽에서부터 왼쪽방향으로 "you"의 인덱스값을 반환함->29
@@ -54,6 +56,7 @@
     //s의 인덱스 0에 저장된 문자열을 출력->"Hello"
     console.log(s[4]);
     //s의 인덱스 4에 저장된 문자열을 출력->"luck"
+
   </script>
 </body>
 </html>

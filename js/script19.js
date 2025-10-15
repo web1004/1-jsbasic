@@ -1,42 +1,30 @@
-let rectangle = document.querySelector('#rectangle');
-let body =document.querySelector('body'); 
+let inputBox =document.querySelector('#input-box');
 
-//01
-// rectangle.addEventListener('mousedown', function(){
-//   console.log('mousedown');
+// inputBox.addEventListener('keypress', function(){
+//   console.log('keypress');
 // });
 
-// rectangle.addEventListener('mouseup', function(){
-//   console.log('mouseup');
+// inputBox.addEventListener('keydown', function(){
+//   console.log('keydown');
 // });
 
-// rectangle.addEventListener('mouseenter', function(){
-//   console.log('mouseenter');
+// inputBox.addEventListener('keyup', function(){
+//   console.log('keyup');
 // });
 
-// rectangle.addEventListener('mouseleave', function(){
-//   console.log('mouseleave');
+// inputBox.addEventListener('keyup', function(event){
+//   console.log('event.key: ', event.key);
+//   console.log('event.keyCode: ', event.keyCode);
 // });
 
-// rectangle.addEventListener('mousemove', function(){
-//   console.log('mousemove');
+// inputBox.addEventListener('focus', function(){
+//   console.log('focus');
 // });
 
-//02
-rectangle.addEventListener('mousedown', function(event){
-  console.log('clientX: ', event.clientX, 'clientY: ', event.clientY,);
-  console.log('pageX: ', event.pageX, 'pageY: ', event.pageY,) ;  //스크롤포함
-});
+// inputBox.addEventListener('blur', function(){
+//   console.log('blur');
+// });
 
-//03-클릭한 지점에 빨강원 나오게 하기
-body.addEventListener('click', function(event){
-  //console.log(event);
-  console.log('pageX: ', event.pageX, 'pageY: ', event.pageY,);
-
-  //<div class="circle"></div>
-  let div = document.createElement('div');
-  div.classList.add('circle');
-  div.style.top = event.pageY-25 + 'px';
-  div.style.left = event.pageX-25 + 'px';
-  body.appendChild(div);
+inputBox.addEventListener('change', function(){
+  console.log('change');
 });

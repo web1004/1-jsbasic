@@ -5,34 +5,30 @@
   <title>실습2-for문-더하기와구구단</title>
 </head>
 <body>
+  
 
 
   <script>
     //1부터 100까지 더하는 for문을 만들고 결과를 출력하시오.
     let sum = 0;
-    for(let k=1;k<=100;k++){  //k=k+1
-      sum+=k;  //sum=sum+k
-    };
+    for(let k=1;k<=100;k++){
+      sum+=k; //sum=sum+k
+    }
     console.log(sum);
 
-    console.log('------------------------------------');
-
     //1부터 100까지 홀수만 출력하시오.
-    for(let h=1;h<=100;h+=2){ //h=h+2;
+    for(let h=1;h<=100;h+=2){  //h=h+2;
       console.log(h);
     } 
 
-    console.log('------------------------------------');
-
-    //구구단 출력(중첩for문이용)
+    //구구단 출력(이중for문이용)
     for(let m=2;m<=9;m++){ //2단에서 9단까지 반복
       console.log(`${m} 단`);
-
       for(let n=1;n<=9;n++){ //각 단별로 1~9까지 곱하는수 반복
-        //구구단출력 2×1=2,2×2=4,.......
+        //console.log(m+"x"+n+"="+m*n); //구구단출력 2×1=2,2×2=4,.......
         console.log(`${m} x ${n} = ${m*n}`);
-      };
-    };
+      }
+    }  
   </script>
 </body>
 </html>

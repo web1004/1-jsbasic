@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1-변수와상수</title>
+</head>
+<body>
+  
+
+
+  <script>
+    /*  
+    변수란 값을 담는 그릇이다. 프로그램이 실행되는 도중에 계속해서 바뀌는 값을 저장하기 위한 이름(공간)이다.
+    ES6(ECMAScript6)란? ECMAScript는 브라우저에서 동작하는 자바스크립트 문법을 표준화하기 위해 만들어졌다.
+
+    let-변수선언
+    const-상수선언(상수란 값이 변하지 않는 변수를 말하며, 상수는 보통 대문자로 명명한다.
+    생일, 이름등 값이 절대 변경될수 없다고 확신하는 값을 사용한다.)
+    */
+
+    let color = "orange";
+    color = "pink"; //변수에 한번 저장된 값을 변경할때는 let을 붙이지 않는다.
+    console.log(color);
+
+    const password = "1234";
+    // password = "5678"; ->const 는 한번 할당이 되면 그값이 영원히 가므로 재할당이 되지 않는다.    
+    console.log(password);
+  </script>
+</body>
+</html>
+
+<!-- 
+*식별자 명명규칙
+영문,한글 및 유니코드글자, 숫자 사용가능
+특수문자는 $ 또는 _
+숫자로 시작할수 없음
+공백(스페이스)사용불가
+예약어 사용불가
+-->

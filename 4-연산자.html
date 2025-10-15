@@ -5,14 +5,14 @@
   <title>4-연산자</title>
 </head>
 <body>
-
   
 
+
   <script>
-    //산술연산자(+,-,*,/,%)
+    //산술연산자
     let num1 = 15;
     let num2 = 6;
-    let result;
+    let result;  //undefined( 값이 할당되지않음)
 
     result = num1 + num2;
     console.log(result);
@@ -20,48 +20,48 @@
     result = num1 - num2;
     console.log(result);
 
-    result = num1 * num2;
+    result = num1 * num2;  //곱샘
     console.log(result);
 
-    result = num1 / num2;
+    result = num1 / num2;  //나눗셈(몫)
     console.log(result);
 
-    result = num1 % num2;
-    console.log(result);
+    result = num1 % num2;  //나머지
+    console.log(result); 
 
-    console.log(`---------------------------`);
+    console.log('--------------------------------');
 
-    //문자결합연산자
+    //문자결합 연산자
     let t1 = "학교종이";
     let t2 = "땡땡땡";
     let t3 = 8282;
     let t4 = "어서모이자";
     let result2;
 
-    result2 = t1 + t2 + t3 + t4;  //문자+문자+숫자+문자=문자
+    result2 = t1 + t2 + t3 + t4;  //숫자+문자=문자, 숫자+숫자=숫자
     console.log(result2);
 
-    console.log(`---------------------------`);
+    console.log('--------------------------------');
 
-    //대입연산자(복합대입연산자)
+    //대입연산자(복합대입연산자 +=)
     let num3 = 10;
     let num4 = 3;
 
-    num3 += num4; //num3=num3+num4; ->13
-    console.log(num3);
+    num3 += num4;  //num3=num3+num4; ->13  
+    console.log(num3); //num3이 13으로 변경
 
-    num3 -= num4; //num3=num3-num4; ->10
-    console.log(num3);
+    num3 -= num4;  //num3=num3-num4; ->10 
+    console.log(num3); //num3이 10으로 변경
 
-    num3 *= num4; //num3=num3*num4; ->30
-    console.log(num3);
+    num3 *= num4;  //num3=num3*num4; ->30
+    console.log(num3); //num3이 30으로 변경
 
-    num3 %= num4; //num3=num3%num4; ->0
-    console.log(num3);
+    num3 %= num4;  //num3=num3%num4; ->0
+    console.log(num3); //num3이 0으로 변경
 
-    console.log(`---------------------------`);
+    console.log('--------------------------------');
 
-    //증감연산자(++/--)
+    //증감 연산자(++/--)
     let num5 = 10;
     let num6 = 20;
     let result3;
@@ -70,17 +70,17 @@
     console.log(num5);
 
     num5++; //변수num5에서 1이 증가 ->num5는 10
-    console.log(num5);
+    console.log(num5); 
+    
+    result3 = num6++; //20을 먼저 result3에 저장을 먼저 하고 그 다음에 증가 -> result3은 20
+    console.log(result3); //출력한 후에 다음 문장에 내려오면서 1이 증가된 숫자인 21이 내려감
 
-    result3 = num6++; //20을 먼저 result3에 저장을 먼저 하고, 다음 문장으로 내려가면서 증가-> result3은 20
+    result3 = ++num6; //위에서 증가한 21이 내려오고 21을  1을 증가한 후에 변수에 값을 저장 -> result3은 22
     console.log(result3);
 
-    result3 = ++num6; //위에서 증가한 21이 내려오고 21을 1증 증가부터 하고 변수값에 저장 -> result3은 22
-    console.log(result3);
+    console.log('--------------------------------');
 
-    console.log(`---------------------------`);
-
-    //비교연산자
+    //비교 연산자
     let a = 10;
     let b = 20;
     let c = 10;
@@ -102,16 +102,15 @@
     result4 = b === f; //데이터형이 일치하지 않으므로 거짓->숫자20=문자20
     console.log(result4);
 
-    result4 = b != f; //데이터타입과 상관없이 숫자가 같으면 같다(false)
+    result4 = b != f; //같지않다(false)
     console.log(result4);
 
-    result4 = b !== f; //데이터타입을 비교하므로 같지 않다(true)
+    result4 = b !== f; //같지않다(타입비교)-true
     console.log(result4);
 
+    console.log('--------------------------------');
 
-    console.log(`---------------------------`);
-
-    //논리연산자(and연산자-&&,or연산자-||)
+    //논리 연산자(and연산자-&&,or연산자-||)
     let aa = 10;
     let bb =20;
     let m = 30;
@@ -119,18 +118,18 @@
     let result5;
 
     result5 = aa > bb || bb >= m || m > n; 
-    console.log(result5); 
-
+    console.log(result5);
+    
     result5 = aa > bb || bb >= m || m <= n; 
-    console.log(result5); 
-
-    result5 = aa <= bb && bb <= m && m <= n; 
-    console.log(result5); 
-
-    result5 = !(aa > bb);  //not
     console.log(result5);
 
-    console.log(`---------------------------`);
+    result5 = aa <= bb && bb <= m && m <= n; 
+    console.log(result5);
+
+    result5 = !(aa > bb); //not
+    console.log(result5);
+
+    console.log('--------------------------------');
 
     //삼항조건연산자
     //조건식 ? 조건식이 맞았을때 실행문 : 조건이 맞지 않았을때 실행문;
@@ -139,8 +138,8 @@
     let h = 3;
     let result6;
 
-    result6 = g > h ? "javascript" : "hello";
-    console.log(result6); 
+    result6 = g < h ? "javascript" : "hello";
+    console.log(result6);
   </script>
 </body>
 </html>

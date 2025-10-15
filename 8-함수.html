@@ -2,11 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>10-함수</title>
+  <title>8-함수</title>
 </head>
 <body>
+  
 
-  <!--  
+
+  <script>
+    /* 
     함수란 하나의 단위로 실행할 수 있도록 명령문을 그룹화한것이다.
     또한 자주 쓰는 내용들을 묶어서 함수로 만들어두면 필요할때 언제든 불러다 쓸수 있다. 
     (일반함수, 매개변수가 있는 함수, return 값이 있는 함수)
@@ -23,55 +26,50 @@
 
     -return:함수내부에서 처리한 결과값을 함수 외부로 전달하기 위해 사용하는 일종의 출력값이다.
     반환값,함수 완료 후 반환되어야 하는 값이 있을때 사용한다.
-  -->
+    */
 
-
-
-  <script>
-    //함수 선언식
-    sayHello(); /* 호이스팅의 영향을 받아서 함수를 선언하기전에 사용할수 있음 */
-    function sayHello(){
+    //함수선언식
+    sayHello1(); //호이스팅의 영향을 받아서 함수를 선언하기전에 호출할수 있음
+    function sayHello1(){
       console.log('이름과 나이를 출력하세요');
       console.log('이름: 홍길동, 나이: 25살');
-    }
-    //sayHello();
+    };
+  
 
-    //함수 표현식
-    //sayHello2(); ->호이스팅의 영향을 받지 않기 때문에 에러남
+    //함수표현식
+    //sayHello2(); ->호이스팅의 영향을 받지 않으므로 에러가 남
     const sayHello2 = function(){
       console.log('이름과 나이를 출력하세요');
       console.log('이름: 홍길동, 나이: 25살');
-    }
+    };
     sayHello2();
+    
 
-    /* 호이스팅(hoisting) : 코드가 실행되기 전 변수나 함수의 선언이 자바스크립트 파일의 최상단으로 끌어올려지는 것을 말한다. 
-    함수를 만들고 그 후에 함수를 호출해야 하는데 먼저 호출하고 다음에 함수를 만들어도 에러가 나지 않음
-    함수선언식(function(){}), 변수 var
-    */
+    /* 호이스팅(hoisting) : 코드가 실행되기 전 변수나 함수의 선언이 자바스크립트 파일의 최상단으로 끌어올려지는 것을 말한다. */
 
     console.log('------------------------------------');
 
     //일반함수
     function greet(){
       console.log("안녕 내 이름은 제시카야!");
-    }
+    };
     greet();
 
     //매개변수가 있는 함수
-    function hello(name1, age){
+    function hello(name1,age){
       console.log('이름과 나이를 출력하세요');
       console.log(`이름: ${name1}, 나이: ${age}`);
     }
     hello("에밀리",20);
     hello("토마스", 35);
 
-    //return 값이 있는 함수
-    function plus(num11, num22){
-      return num11 + num22;
-      console.log('함수호출'); //함수내부에서 return문 아래에 작성된 문장은 실행되지않음
+    //return값이 있는 함수
+    function hello2(name2){
+      console.log("안녕 내 이름은",name2,"야");
+      return "하하하";  //함수 내부에서 외부로 전달
     }
-    let result = plus(10,15);
-    console.log(`두 숫자를 더한 결과는 ${result} 입니다.`);
+    let ha = hello2("제임스");  //리턴한 값을 받을때는 할당하는 변수를 통해서 받을수 있다.
+    console.log(ha);
 
     console.log('------------------------------------');
 
@@ -81,23 +79,24 @@
     */
 
     //전역변수(전역스코프)
-    let sum = 0;
+    let summ = 0;
     function add(number1, number2) {
-      sum = number1 + number2;
+      summ = number1 + number2;
     }
-    add(10,15);
-    console.log(sum);
+    add(10, 15);
+    console.log(summ);
 
     //지역변수(지역스코프)
-    /* function add(number11, number22) {
-      let summ = number11 + number22;
+    /* function add(number1, number2) {
+      let summ = number1 + number2;
     }
-    add(10,15);
-    console.log(summ); ->Error(지역변수로 함수내부에서만 접근가능함)  */
+    add(10, 15);
+    console.log(summ); ->Error(지역변수로 함수내부에서만 접근가능함)   
+    */
 
-    const number3 = 10;  //전역스코프
+    const number3 = 10; //전역스코프
     function print() {
-      const number3 = 100; //지역스코프
+      const number3 = 100;  //지역스코프 
       console.log(`지역스코프 : ${number3}`);
     };
     print();
@@ -112,16 +111,40 @@
 
     console.log('------------------------------------');
 
+    //ES6 매개변수에 기본값(default)을 지정하는 기능이 추가됨
+
+/*     function sum(num1, num2){
+      console.log('num1: ',num1);
+      console.log('num2: ', num2);
+      return num1 + num2;
+    }
+
+    let result1 = sum(5); ->매개변수가 한개밖에 전달이 안되므로 정상적인 결과값이 나오지 않음  
+    console.log('result1: ', result1);  */
+
+    function sum(num1=0, num2=0){ //ES6 에서는 매개변수에 기본값을 넣을수 있음
+      console.log('num1: ',num1);
+      console.log('num2: ', num2);
+      return num1 + num2;
+    }
+
+    let result1 = sum(5); //매개변수가 한개일때 나머지 한개는 기본값으로 0이 됨
+    console.log('result1: ', result1); 
+
+    console.log('------------------------------------');
+
     /* 화살표함수(ES6) 중요!
     -function 예약어를 생략할수 있다.
     -함수에 매개변수가 단 하나뿐이라면 괄호도 생략할수 있다.
     -함수 바디가 표현식이 하나라면 중괄호와 return문도 생략할수 있다. */
 
+    //함수표현식
     // const hello3 = function(){
     //   console.log('hello Javascript!');
     // };
     // hello3();
 
+    //화살표함수
     // const hello3 = () => {
     //   console.log('hello Javascript!');
     // };
@@ -141,7 +164,7 @@
     //명령문이 한줄일때는 코드블럭{}도 생략가능
     // const hello3 = name3 => console.log(`hello ${name3}`);
     // hello3('웹디1004');
-
+    
     // const hello3 = name3 => {
     //   return `hello ${name3}`;
     // };

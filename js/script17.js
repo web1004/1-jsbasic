@@ -1,65 +1,56 @@
-let title = document.getElementById('title');  
-console.log(title);
+let btn1 = document.querySelector('.btn1');
+let btn2 = document.querySelector('.btn2');
 
-title.textContent = '스포츠 3대 종목';
+console.log(btn1);
+console.log(btn2);
 
-let items = document.getElementsByClassName('item');
-console.log(items);
-console.log('농구: ', items[0]);
-console.log('테니스: ', items[1]);
-console.log('배드민턴: ', items[2]);
+//(2)프로퍼티 리스너
+btn1.onclick = function(){
+  alert('Hello Javascript!');
+};
 
-let liList = document.getElementsByTagName('li');
-console.log(liList);
+//(3)addEventListener(제일 많이 사용함)
+// btn2.addEventListener('click', () => {
+//   alert('Hello Javascript!');
+// });
 
-console.log('----------------------------------------');
 
-let h2 = document.querySelector('#title');
-console.log('h2: ', h2);
+function helloEvent1(){
+  alert('addEventListener1');
+};
+function helloEvent2(){
+  alert('addEventListener2');
+};
 
-let item = document.querySelector('.item');
-console.log('query item: ', item);
+btn2.addEventListener('click', helloEvent1);
+btn2.addEventListener('click', helloEvent2);
 
-let itemAll = document.querySelectorAll('.item');
-console.log('query itemAll: ', itemAll);
-console.log('query itemAll[0]: ', itemAll[0]);
-console.log('query itemAll[1]: ', itemAll[1]);
-console.log('query itemAll[2]: ', itemAll[2]);
+//이벤트삭제
+const button = document.querySelector('.event');
+const removeButton = document.querySelector('.remove');
 
-h2.textContent = '스포츠!!!';
-h2.textContent = '<span>스포츠!!!</span>';
-h2.innerHTML='<span>스포츠@@@</span>';
+function handler(event){
+  console.log(event);
+};
+function removeHandler(event){
+  button.removeEventListener('click', handler);
+};
 
-let input = document.querySelector('input');
+button.addEventListener('click', handler);
+removeButton.addEventListener('click', removeHandler);
 
-input.setAttribute('placeholder', '헬스운동을 입력해주세요!');
-input.setAttribute('required', '');
-input.removeAttribute('placeholder');
-input.removeAttribute('required');
+/*  
+btn.addEventListener('click', function(event){
+  console.log('event:', event)  
+});
 
-let helloItem1 = document.querySelector('.hello1');
-console.log('helloItem1: ', helloItem1);
+이벤트객체는 파라미터(event)로 넘겨받을수 있는데 브라우저가 우리에게 전달해주는것이다.
+이벤트객체 속에는 이벤트에 관련된 다양한 속성와 메서드를 가지고 있다.
+파라미터의 이름은 맘대로 지을수 있다.
 
-helloItem1.style.color = 'white';
-helloItem1.style.backgroundColor = 'black';
+이벤트라는건 어떤 동작이나 상태등의 사건이 발생하는것을 의미한다.
+키보드를 눌렀거나 클릭을 했거나 등등이 이벤트로 분류가 된다.
+html DOM 요소들은 이런 이벤트가 발생했을때 웹브라우저에서 이벤트가 발생된걸 알수 있도록 어떤 이벤트 신호를 발생을 시키는데, 이때 자바스크립트는 발생한 이벤트에 반응을 해서 어떤 처리 어떤 동작을 수행할수가 있다.
 
-// helloItem1.classList.add('dark','one');
-// helloItem1.classList.remove('dark');
-
-let helloItem2 = document.querySelector('.hello2');
-console.log('helloItem2: ', helloItem2);
-
-helloItem2.style.cssText = 'font-size:33px;color: #fff;background-color:hotpink';
-
-let helloItem3 = document.querySelector('.hello3');
-console.log('helloItem3: ', helloItem3);
-
-helloItem3.innerText = '안녕하세요3.~!!!';
-helloItem3.style.color = 'blue';
-
-let tit = document.createElement('h1');
-let body = document.querySelector('body');
-
-tit.innerText ='새로운 친구에요!';
-tit.style.color = 'red';
-body.appendChild(tit);
+자바스크립트에서 이벤트에 대한 반응을 지정하기 위해서는 해당 이벤트를 감지할수 있는 EventListener를 사용해서 이벤트 핸들러를 지정해줘야한다. 
+*/
