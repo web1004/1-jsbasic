@@ -38,6 +38,15 @@
     }
     ul li a:hover{text-decoration: underline;}
     ol li a{font-size: 13px;color: #ccc;}
+    hr{
+      margin: 30px 0;
+      border: none;
+      border: 1px solid #666;
+    }
+    .ex{
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -47,32 +56,39 @@
     <div class="list">
       <ul>
         <li><a href="https://web1004.github.io/1-style/0-웹접근성지침.html">1-변수와상수</a></li>
-        <li><a href="https://web1004.github.io/1-style/2-아이디와클래스.html">2-아이디와클래스</a></li>
-        <li><a href="https://web1004.github.io/1-style/3-텍스트스타일.html">3-텍스트스타일</a></li>
-        <li><a href="https://web1004.github.io/1-style/4-목록꾸미기.html">4-목록꾸미기</a></li>
-        <li><a href="https://web1004.github.io/1-style/5-여백과테두리.html">5-여백과테두리</a></li>
-        <li><a href="https://web1004.github.io/1-style/6-둥근모서리.html">6-둥근모서리</a></li>
-        <li><a href="https://web1004.github.io/1-style/7-배경과불투명도.html">7-배경과불투명도</a></li>
-        <li><a href="https://web1004.github.io/1-style/8-그림자효과.html">8-그림자효과</a></li>
-        <li><a href="https://web1004.github.io/1-style/9-그라데이션효과.html">9-그라데이션효과</a></li>
-        <li><a href="https://web1004.github.io/1-style/10-하이퍼링크.html">10-하이퍼링크</a></li>
-        <li><a href="https://web1004.github.io/1-style/11-display와float속성.html">11-display와float속성</a></li>
+        <li><a href="https://web1004.github.io/1-style/2-아이디와클래스.html">2-데이터타입</a></li>
+        <li><a href="https://web1004.github.io/1-style/3-텍스트스타일.html">3-형변환</a></li>
+        <li><a href="https://web1004.github.io/1-style/4-목록꾸미기.html">4-연산자</a></li>
+        <li><a href="https://web1004.github.io/1-style/5-여백과테두리.html">5-조건문-if</a></li>
+        <li><a href="https://web1004.github.io/1-style/6-둥근모서리.html">6-선택문-switch</a></li>
+        <li><a href="https://web1004.github.io/1-style/7-배경과불투명도.html">7-반복문-for</a></li>
+        <li><a href="https://web1004.github.io/1-style/8-그림자효과.html">8-함수</a></li>
+        <li><a href="https://web1004.github.io/1-style/9-그라데이션효과.html">9-배열</a></li>
+        <li><a href="https://web1004.github.io/1-style/10-하이퍼링크.html">10-객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/11-display와float속성.html">11-구조분해할당</a></li>
       </ul>
       <ul>
-        <li><a href="https://web1004.github.io/1-style/12-position과overflow속성.html">12-position과overflow속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/13-박스(box-sizing,width,height,auto,inherit).html">13-박스(box-sizing,width,height,auto,inherit)</a></li>
-        <li><a href="https://web1004.github.io/1-style/14-표관련속성.html">14-표관련속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/15-선택자.html">15-선택자</a></li>
-        <li><a href="https://web1004.github.io/1-style/16-플랙서블박스(FlexibleBox).html">16-플랙서블박스(FlexibleBox)</a></li>
-        <li><a href="https://web1004.github.io/1-style/17-그리드(Grid).html">17-그리드(Grid)</a></li>
-        <li><a href="https://web1004.github.io/1-style/18-transform속성.html">18-transform속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/19-transition속성.html">19-transition속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/20-animation속성.html">20-animation속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/21-filter속성.html">21-filter속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/22-컬럼으로분할하는column-count속성.html">22-컬럼으로분할하는column-count속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/23-요소의 비율aspect와이미지크기조정object-fit속성.html">23-요소의 비율aspect와이미지크기조정object-fit속성</a></li>
-        <li><a href="https://web1004.github.io/1-style/24-이미지효과활용하기.html">24-이미지효과활용하기</a></li>
-        <li><a href="https://web1004.github.io/1-style/25-counter()attr()함수와변수.html">25-counter()attr()함수와변수</a></li>
+        <li><a href="https://web1004.github.io/1-style/12-position과overflow속성.html">12-내장객체-수학(Math)객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/13-박스(box-sizing,width,height,auto,inherit).html">13-내장객체-문자(String)객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/14-표관련속성.html">14-내장객체-날짜(Date)객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/15-선택자.html">15-BOM브라우저객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/16-플랙서블박스(FlexibleBox).html">16-DOM문서객체</a></li>
+        <li><a href="https://web1004.github.io/1-style/17-그리드(Grid).html">17-이벤트</a></li>
+        <li><a href="https://web1004.github.io/1-style/18-transform속성.html">18-마우스이벤트</a></li>
+        <li><a href="https://web1004.github.io/1-style/19-transition속성.html">19-커서이벤트</a></li>
+        <li><a href="https://web1004.github.io/1-style/20-animation속성.html">20-입력폼활용하기</a></li>
+        <li><a href="https://web1004.github.io/1-style/21-filter속성.html">21-데이터속성</a></li>
+        <li><a href="https://web1004.github.io/1-style/22-컬럼으로분할하는column-count속성.html">22-모듈</a></li>
+      </ul>
+    </div>
+    <hr>
+    <div class="ex">
+      <ul>
+        <li><a href="">실습1-if문-학점구하기</a></li>
+        <li><a href="">실습2-for문-더하기와구구단</a></li>
+        <li><a href="">실습3-연도와월별날짜출력하기</a></li>
+        <li><a href="">실습5-현재나이계산하기</a></li>
+        <li><a href="">실습6-할인가격프로그램</a></li>
       </ul>
     </div>
   </div>
