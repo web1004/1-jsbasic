@@ -9,7 +9,7 @@
 
 
   <script>
-    /* 
+    /* 제어문 중에 선택문
     switch문:if문과 용도는 비슷하나 if문은 만족하는 데이터가 여러개일 경우 주로 사용하고, switch문은 여러 경우의 값중 일치하는 데이터를 찾아 그에 해당하는 실행문을 실행시킬 때 사용한다.
 
     let 변수=초기값;
@@ -24,12 +24,13 @@
       break;
 
       default:실행문5; ->일치하는 값이 없는 경우 
-    }    
+    };   
     */
 
     let site=prompt("네이버,다음,구글 중 즐겨 사용하는 포털검색 사이트는?","");
     let url;
 
+    //(1)변수값에 따라 url변수에 웹주소를 할당
     switch(site){
       case "네이버":url="www.naver.com";
       break;
@@ -37,12 +38,15 @@
       break;
       case "구글":url="www.google.com";
       break;
-      default:alert("보기 중에 없는 사이트입니다."); 
-    }
 
+      default:alert("보기 중에 없는 사이트입니다."); 
+    }; 
+
+    //(2)할당한 url주소로 이동
     if(url){
-      location.href="http://"+url;
-    }
+      //location.href = "http://" + url;  // http://www.naver.com
+      location.href = `http://${url}`;
+    };
   </script>
 </body>
 </html>

@@ -6,14 +6,17 @@ console.log(btn2);
 
 //(2)프로퍼티 리스너
 btn1.onclick = function(){
-  alert('Hello Javascript!');
+  alert('Hello Javascript2!');
 };
 
 //(3)addEventListener(제일 많이 사용함)
-// btn2.addEventListener('click', () => {
-//   alert('Hello Javascript!');
+// btn2.addEventListener('click', function(){
+//   alert('Hello Javascript3!');
 // });
 
+// btn2.addEventListener('click', () => {
+//   alert('Hello Javascript3!');
+// });
 
 function helloEvent1(){
   alert('addEventListener1');
@@ -36,8 +39,9 @@ function removeHandler(event){
   button.removeEventListener('click', handler);
 };
 
-button.addEventListener('click', handler);
+button.addEventListener('click',handler);
 removeButton.addEventListener('click', removeHandler);
+
 
 /*  
 btn.addEventListener('click', function(event){

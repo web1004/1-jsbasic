@@ -19,7 +19,7 @@
     <div id="date"></div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
   <script>
     // let d = new Date();
 
@@ -30,18 +30,18 @@
     // console.log(d.getMinutes());
     // console.log(d.getDay());
 
-    /*현재 날짜표시하기________________________*/
     let objDate = new Date();
 
-    let year = objDate.getFullYear(); // 년 구하기
-    let month = objDate.getMonth(); //월구하기->0(1월)부터 11(12월)까지의 정수값
-    let date = objDate.getDate(); //일구하기->날짜(일)를 나타내는 1에서 31까지의 정수
-    let day = objDate.getDay(); //0(일)부터 6(토)까지의 정수값
+    let year = objDate.getFullYear(); //년도구하기
+    let month = objDate.getMonth();  //월구하기(index)->0(1월)부터 11(12월)까지의 정수값
+    let date = objDate.getDate(); //일구하기
+    let day = objDate.getDay(); //요일구하기(index)->0(일)부터 6(토)까지의 정수값
     let aryDay = ['일', '월', '화', '수', '목', '금', '토'];
 
     //년,월,일,요일 출력
-    let fullDate = `${year}년 ${month+1}월 ${date}일 ${aryDay[day]}요일`;
-    $("#date").text(fullDate);
+    let fullDate = `${year}년 ${month+1}월 ${date}일 ${aryDay[day]}요일 `;
+    //console.log(fullDate);
+    document.querySelector('#date').textContent = fullDate;
   </script>
 </body>
 </html>

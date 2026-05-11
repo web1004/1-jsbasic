@@ -26,23 +26,23 @@
     console.log(arr1[2]);
     console.log('arr1: ', arr1);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     /* (2)자주 사용하는 배열 메서드() */
 
-    const fruits = ['사과', '바나나', '딸기', '파인애플', '포도'];
+    const fruits = ['사과','바나나','딸기','파인애플','포도'];
 
-    //length-배열의 길이
+    //length-배열의 길이(총개수)
     console.log('fruits.length: ', fruits.length);
     console.log('마지막값(index): ',fruits[fruits.length-1]);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //push()-배열끝에 항목추가
     fruits.push('귤');
     console.log(fruits);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //pop()-배열끝에서부터 항목제거
     fruits.pop();
@@ -52,28 +52,28 @@
     let removeItem = fruits.pop(); //마지막에 삭제한 배열요소를 저장
     console.log('removeItem: ',removeItem);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //unshift()-배열앞에 항목 추가하기
     fruits.unshift('수박');
     fruits.unshift('망고');
     console.log(fruits);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //shift()-배열앞에서 제거
     fruits.shift();
     console.log(fruits);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //indexOf()-배열한 항목의 인덱스(index)찾기
     const index1 = fruits.indexOf('바나나'); 
     console.log('index1: ',index1);
     const index2 = fruits.indexOf('토마토'); //데이터가 없는 경우는 -1로 표시됨
-    console.log('index1: ',index2);
+    console.log('index2: ',index2);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //splice()-인덱스 위치에 있는 항목 제거하기
     fruits.splice(1,1); //(제거하고 싶은 인텍스번호, 몇개제거할건지)
@@ -84,14 +84,14 @@
     fruits.splice(findIndex,1);
     console.log(fruits);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
-    const fruits2 = ['사과', '바나나', '딸기', '파인애플', '포도'];
+    const fruits2 = ['사과','바나나','딸기','파인애플','포도'];
 
-    /* (중요!!!) 
+    /*(중요!!!)  
     foreach()-배열의 항목을 순회하면서 값을 하나씩 넘겨줌
     foreach()는 필수인자로 현재의 요소의 값을 의미하는 item(이름은 맘대로 정할수 있음)과 같은 인자가 필수로 요구가되고, 선택적으로 index도 사용할수 있다.
-
+    
     map()-foreach()와 동일한 기능
     forEach는 원본배열의 값을 변경하지도 않고 값을 리턴하지도 않음
     map은 forEach와 비슷하지만 새로운 배열을 반환한다.
@@ -114,56 +114,57 @@
     console.log(newArr2);
     //map()은 원본배열요소에 각각 1씩 더한 새로운 배열이 만들어진다. 어떤 함수를 적용해서 처리한 결과를 저장해야 한다면 map을 사용한다.
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //find()-주어진 판별함수를 만족하는 첫번째 요소의 값을 반환
     const arr4 = [1, 2, 3, 4, 5];
-    console.log(arr4.find((number) => number > 3));  //값
-    console.log(arr4.findIndex((number) => number > 3));  //인덱스번호
+    console.log(arr4.find((number) => number > 3)); //값
+    console.log(arr4.findIndex((number) => number > 3)); //인덱스번호
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
-    //includes()-지정한 요소가 배열에 있는지
+    //includes()-지정한 요소가 배열에 있는지(있으면 true, 없으면 false)
     const arr5 = ['hello', 'world'];
     console.log(arr5.includes('hello'));
     console.log(arr5.includes('no'));
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //slice()-배열의 복사본을 조각내서 새로운 배열로 반환(원본배열은 바뀌지 않음)
-    const arr7 = [1, 2, 3, 4, 5];
-    console.log(arr7.slice(2)); //시작인덱스 
-    console.log(arr7.slice(2, 4)); //시작인텍스에서 종료인덱스전까지
+    const arr6 = [1, 2, 3, 4, 5];
+    console.log(arr6.slice(2)); //시작인덱스 
+    console.log(arr6.slice(2,4)); //시작인텍스에서 종료인덱스전까지 
+
+    console.log('------------------------------------');
 
     //splice()-필수인자를 시작인덱스를 가지고 선택적 인자로 배열에서 제거할 요소의 개수와 추가할 요소를 지정할수 있다.
-    const arr8 = [1, 2, 3, 4, 5];
-    //arr8.splice(2);
-    //arr8.splice(2,1);
-    arr8.splice(2,1,999);
-    console.log(arr8);
+    const arr7 = [1, 2, 3, 4, 5];
+    //arr7.splice(2);
+    //arr7.splice(2,1);
+    arr7.splice(2,1,999);
+    console.log(arr7);
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //join()-배열의 모든 요소들을 이어 붙여서 하나의 문자열로 반환
-    const arr9 = ['hello', 'world', 'hi', 'wow'];
-    console.log(arr9.join());
-    console.log(arr9.join(';'));
+    const arr8 = ['hello', 'world', 'hi', 'wow'];
+    console.log(arr8.join());
+    console.log(arr8.join(';'));
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //concat()-인자로 주어진 배열이나 값들을 기존배열에 합쳐서 새로운 배열로 반환
-    const arr10 = ['hello', 'world', 'hi', 'wow'];
+    const arr9 = ['hello', 'world', 'hi', 'wow'];
     const numbers = [111,222];
 
-    console.log(arr10.concat(numbers));
-    console.log(arr10.concat('aaa','bbb'));
+    console.log(arr9.concat(numbers));
+    console.log(arr9.concat('aaa','bbb'));
 
-    console.log('--------------------------------------');
+    console.log('------------------------------------');
 
     //filter()-주어진 판별함수의 결과값이 참인 요소들만 모아서 새로운 배열로 반환(필터링)
-    const arr11 = [1, 2, 3, 4, 5];
-    console.log(arr11.filter((number) => number > 3));
-
+    const arr10 = [1, 2, 3, 4, 5];
+    console.log(arr10.filter((number) => number > 3));
   </script>
 </body>
 </html>
